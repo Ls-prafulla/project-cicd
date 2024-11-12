@@ -5,6 +5,8 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
+    tags: true,
+    paths: ${{Ls-prafulla.github.io}},
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,7 +42,4 @@ jobs:
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4,
-    on:
-      branch: master,
-      tags: true,
+        uses: actions/deploy-pages@v4   
